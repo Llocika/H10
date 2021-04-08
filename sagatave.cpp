@@ -34,16 +34,18 @@ int main()
         std::cout << x.first << " => " << x.second << '\n';
         int num1 = x.first;
         string n1 = x.second;
-        f1.write((char*)&n1, sizeof(n1));
         f1.write((char*)&num1, sizeof(num1));
+        f1.write((char*)&n1, sizeof(n1));
+
     }
 
     for (auto& x : vardnica2) {
         std::cout << x.first << " => " << x.second << '\n';
         int num1 = x.first;
         string n1 = x.second;
-        f2.write((char*)&n1, sizeof(n1));
         f2.write((char*)&num1, sizeof(num1));
+        f2.write((char*)&n1, sizeof(n1));
+
     }
 
 
