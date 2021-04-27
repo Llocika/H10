@@ -57,7 +57,20 @@ void joinDesc(fstream &f1, fstream &f2, fstream &f3)
         f2.read((char*)&n2, sizeof(n2));
         f2.read(word2, sizeof(word2));
     } while (f1 && f2);
-    
+        
+    while (!f1.eof()) {
+        f1.read((char*)&n1, sizeof(n1));
+        f1.read(word1, sizeof(word1));
+        f3.write((char*)&n1, sizeof(n1));
+        f3.write(word1, sizeof(word1));
+    }
+
+    while (!f2.eof()) {
+        f2.read((char*)&n2, sizeof(n2));
+        f2.read(word2, sizeof(word2));
+        f3.write((char*)&n2, sizeof(n2));
+        f3.write(word2, sizeof(word2));
+    }
 
     f1.close();
     f2.close();
