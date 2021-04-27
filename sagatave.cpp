@@ -17,6 +17,7 @@ int main_dis()
     vardnica1.insert(pair<int, string>(36, "cc"));
     vardnica1.insert(pair<int, string>(20, "dd"));
     vardnica1.insert(pair<int, string>(11, "ee"));
+    vardnica1.insert(pair<int, string>(1, "ff"));
 
     map<int, string>::iterator itr2;
     map<int, string> vardnica2;
