@@ -12,7 +12,7 @@ int main_dis()
     map<int, string> vardnica1;
 
 
-    // izveidojam vārdnīcu, ar kuru piepildīsim pirmo failu
+    // izveidojam vārdnīcu, ar kuru aizpildīsim pirmo failu
     vardnica1.insert(pair<int, string>(50, "aa"));
     vardnica1.insert(pair<int, string>(46, "bb "));
     vardnica1.insert(pair<int, string>(36, "cc"));
