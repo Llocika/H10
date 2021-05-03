@@ -4,6 +4,7 @@
 #include<map>
 using namespace std;
 const int wLen = 30;
+//(lietojot Visual Studio) lai izveidotu testa failus, jānomaina funkcija vārds uz main(), bet failā Source.cpp - tieši pretēji
 int main_dis()
 {
 
@@ -55,19 +56,6 @@ int main_dis()
 
     }
 
-    //  for (auto& x : vardnica1) {
-
-    //      std::cout << x.first << " => " << x.second << '\n';
-    //      int num1 = x.first;
-    //      string n1 = x.second;
-    //      //new
-          //char char_n1[wLen+1];
-          //strcpy_s(char_n1, n1.c_str());
-
-    //      f1.write((char*)&num1, sizeof(num1));
-    //      f1.write(char_n1, wLen + 1);
-
-    //  }
 
 
     for (map<int, string>::reverse_iterator it = vardnica2.rbegin(); it != vardnica2.rend(); it++)
@@ -86,19 +74,6 @@ int main_dis()
 
 
 
-    //for (auto& x : vardnica2) {
-    //    std::cout << x.first << " => " << x.second << '\n';
-    //    int num1 = x.first;
-    //    string n1 = x.second;
-
-    //    //const char* tmp = n1.c_str();
-    //    char char_n1[wLen + 1];
-    //    strcpy_s(char_n1, n1.c_str());
-
-    //    f2.write((char*)&num1, sizeof(num1));
-    //    f2.write(char_n1, wLen + 1);
-
-    //}
 
 
     return 0;
