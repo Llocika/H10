@@ -14,10 +14,6 @@ const int wLen = 30; //vārda maks. garums
 void joinDesc(fstream& f1, fstream& f2, fstream& f3)
 {
 
-    //Inicializējam failu mainīgos
-    //fstream f1("f1", ios::in | ios::binary);
-    //fstream f2("f2", ios::in | ios::binary);
-    //fstream f3("f3", ios::out | ios::binary);
 
     int n1;
     int n2;
@@ -67,6 +63,7 @@ void joinDesc(fstream& f1, fstream& f2, fstream& f3)
         }
     } while (f1 && f2);
 
+    //gadījumā ja viens fails ir garāks par otru
     while (!f1.eof()) {
         f1.read((char*)&n1, sizeof(n1));
         f1.read(word1, sizeof(word1));
@@ -89,15 +86,29 @@ void joinDesc(fstream& f1, fstream& f2, fstream& f3)
 
 int main()
 {
-    //char f1[] = "f1";
-    //char f2[] = "f2";
-    //char f3[] = "f3";
+    //programmas testēšanai tiek izmantoti iepriekš sagatavotie faili f1, f2
+    //to izveides kods ir atrodams failā "sagatave.cpp" 
     fstream f1("f1", ios::in | ios::binary);
     fstream f2("f2", ios::in | ios::binary);
     fstream f3("f3", ios::out | ios::binary);
     joinDesc(f1, f2, f3);
     int n3;
     char word3[wLen + 1];
+
+    /*sagaidāmais rezultāts:
+    51, "aaa"
+    50, "aa"
+    46, "bb"
+    44, "bbb"
+    36, "cc"
+    35, "cc"
+    34, "cc"
+    33, "ccc"
+    20, "de"
+    11, "ee"
+    8, "eee"
+    1, "ff" */
+
     //pārbaudām, kas tika ielikts f3
     f3.open("f3", ios::in | ios::binary);
     f3.read((char*)&n3, sizeof(n3));
